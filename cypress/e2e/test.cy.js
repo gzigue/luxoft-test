@@ -28,8 +28,9 @@ describe('Tests to the Aviasales home page', () => {
     cy.setDestinationAsBerlin();
     cy.selectDepartDateAsOctober30();
     cy.set2AdultPassengersInEconomicClass();
-    
-    
+    cy.submitForm();
+    cy.verifyTheSearchPageLoaded();
+    cy.verifyTheEnteredDataIsDisplayed();
     
   })
 })

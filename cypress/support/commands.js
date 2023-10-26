@@ -41,6 +41,23 @@ const set2AdultPassengersInEconomicClass = () => {
 }
 Cypress.Commands.add('set2AdultPassengersInEconomicClass', set2AdultPassengersInEconomicClass);
 
+const submitForm = () => {
+    cy.get('[data-test-id="form-submit"]').click();
+}
+Cypress.Commands.add('submitForm', submitForm);
 
+const verifyTheSearchPageLoaded = () => {
+    cy.title().should('contain', 'NYC').should('contain', 'BER');
+    cy.get('.product-list').should('exist');
+}
+Cypress.Commands.add('verifyTheSearchPageLoaded', verifyTheSearchPageLoaded);
 
-
+const verifyTheEnteredDataIsDisplayed = () => {
+    cy.get('#origin').should('have.value', 'John F. Kennedy International Airport');
+    cy.get('#destination').should('have.value', 'Berlin');
+    cy.get('.trip-duration__date-input[placeholder="Depart"]').should('have.value', 'Mon, October 30')
+    cy.get('.trip-duration__date-input[placeholder="Return"]').should('have.value', '');
+    cy.get('.additional-fields__label').eq(0).should('have.text', '2 passengers');
+    cy.get('.additional-fields__label').eq(1).should('have.text', 'economy');
+}
+Cypress.Commands.add('verifyTheEnteredDataIsDisplayed', verifyTheEnteredDataIsDisplayed);
