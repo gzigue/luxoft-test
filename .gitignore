@@ -1,0 +1,23 @@
+# Cypress generated files
+/cypress/screenshots
+/cypress/videos
+/cypress/fixtures
+
+# Local configuration files
+/cypress.env.json
+
+# Node modules
+/node_modules
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+
+# IDE files (specifically for popular IDEs like Visual Studio Code)
+/.vscode
+
+# macOS file system files
+.DS_Store
+
