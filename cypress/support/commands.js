@@ -9,6 +9,7 @@ const enableOrDisableNightTheme = () => {
 Cypress.Commands.add('enableOrDisableNightTheme', enableOrDisableNightTheme);
 
 const setOriginAsNewYork = () => {
+    // I'm adding a {backspace} here because the first character was not being typed
     cy.get('#origin').type(' {backspace}New York');
     cy.get('div.autocomplete__suggestion-info > span.autocomplete__suggestion-main-name').each(($el, index, $list) => {
       if($el.text() === 'John F. Kennedy International Airport') {
@@ -19,6 +20,7 @@ const setOriginAsNewYork = () => {
 Cypress.Commands.add('setOriginAsNewYork', setOriginAsNewYork);
 
 const setDestinationAsBerlin = () => {
+]   // I'm adding a {backspace} here because the first character was not being typed
     cy.get('#destination').type(` {backspace}Berlin`);
 }
 Cypress.Commands.add('setDestinationAsBerlin', setDestinationAsBerlin);
@@ -47,7 +49,9 @@ const submitForm = () => {
 Cypress.Commands.add('submitForm', submitForm);
 
 const verifyTheSearchPageLoaded = () => {
+    // Checking the title of the page, to see if it updated
     cy.title().should('contain', 'NYC').should('contain', 'BER');
+    // Checking if the tickets list loaded
     cy.get('.product-list').should('exist');
 }
 Cypress.Commands.add('verifyTheSearchPageLoaded', verifyTheSearchPageLoaded);
