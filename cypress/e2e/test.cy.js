@@ -20,6 +20,16 @@ describe('Tests to the Aviasales home page', () => {
     - Use JavaScript + framework you prefer (playwright as a plus)
     - Use public GIT (github, gitlab) repo to share results
     Deadline - till the October 27, 2023*/
+
+    
+    cy.visitAviasalesHomePage();
+    cy.enableOrDisableNightTheme();
+    cy.setOriginAsNewYork();
+    cy.setDestinationAsBerlin();
+    cy.selectDepartDateAsOctober30();
+    cy.set2AdultPassengersInEconomicClass();
+    
+    
     
   })
 })
