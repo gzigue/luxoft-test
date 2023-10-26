@@ -20,7 +20,7 @@ const setOriginAsNewYork = () => {
 Cypress.Commands.add('setOriginAsNewYork', setOriginAsNewYork);
 
 const setDestinationAsBerlin = () => {
-]   // I'm adding a {backspace} here because the first character was not being typed
+   // I'm adding a {backspace} here because the first character was not being typed
     cy.get('#destination').type(` {backspace}Berlin`);
 }
 Cypress.Commands.add('setDestinationAsBerlin', setDestinationAsBerlin);
